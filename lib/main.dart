@@ -1,9 +1,23 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:chat_online_firebase/chat_screen.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async {
   runApp(MyApp());
-  Firestore.instance.collection("col").document("doc").setData({"texto": "kleiton"});
+  // Firestore.instance.collection("col").document("doc2").setData({"texto": "como vc esta?"});
+  // Firestore.instance.collection("mensagens").document("msg2").setData({
+  //   'texto': 'blza',
+  //   'from': 'Kleiton',
+  //   'read': false
+  // });
+  // QuerySnapshot snapshot = await Firestore.instance.collection("col").getDocuments();
+  // snapshot.documents.forEach((d) {
+  //   print(d.data);
+  //  });
+  // Firestore.instance.collection('mensagens').snapshots().listen((dado) {
+  //   dado.documents.forEach((d) {
+  //     print(d.data);
+  //    });
+  //  });
 }
 
 class MyApp extends StatelessWidget {
@@ -13,9 +27,12 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
+        iconTheme: IconThemeData(
+          color: Colors.blue,
+        ),
         primarySwatch: Colors.blue,
       ),
-      home: Container(),
+      home: ChatScreen(),
     );
   }
 }
